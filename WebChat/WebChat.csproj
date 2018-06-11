@@ -5,6 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20180610031012_AddCustomUserFields.cs" />
+    <Compile Remove="Migrations\20180610031012_AddCustomUserFields.Designer.cs" />
+    <Compile Remove="Migrations\20180610031801_CustomFieldsAreAdded.cs" />
+    <Compile Remove="Migrations\20180610031801_CustomFieldsAreAdded.Designer.cs" />
+    <Compile Remove="Migrations\20180610040827_CustimStuffDwlete.cs" />
+    <Compile Remove="Migrations\20180610040827_CustimStuffDwlete.Designer.cs" />
+    <Compile Remove="Migrations\20180610040945_Test1.cs" />
+    <Compile Remove="Migrations\20180610040945_Test1.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.0" />
   </ItemGroup>

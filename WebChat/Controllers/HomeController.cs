@@ -4,7 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using WebChat.Areas.Identity.Data;
 using WebChat.Models;
 
 namespace WebChat.Controllers
@@ -12,6 +14,11 @@ namespace WebChat.Controllers
     [Authorize]
     public class HomeController : Controller
     {
+        private readonly UserManager<WebChatUser> _userManager;
+        public HomeController(UserManager<WebChatUser> userManager)
+        {
+            _userManager = userManager;
+        }
         public IActionResult Index()
         {
             return View();

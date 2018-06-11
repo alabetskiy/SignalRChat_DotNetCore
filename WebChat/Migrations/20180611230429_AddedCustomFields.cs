@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WebChat.Migrations
 {
-    public partial class Test1 : Migration
+    public partial class AddedCustomFields : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
