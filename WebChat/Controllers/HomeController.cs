@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using WebChat.Areas.Identity.Data;
 using WebChat.Models;
+using WebChat.Models.ViewModels;
 
 namespace WebChat.Controllers
 {
@@ -21,7 +22,11 @@ namespace WebChat.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            var user = _userManager.GetUserAsync(User).Result.Name;
+
+            var userDtob = new UserChatRoomViewModel() { UserName = user };
+
+            return View(userDtob);
         }
 
         public IActionResult About()

@@ -1,33 +1,30 @@
-﻿@{
+﻿@model WebChat.Models.ViewModels.UserChatRoomViewModel
+@{
     ViewData["Title"] = "Home Page";
 }
-
-<h2>My web chat</h2>
 
 <div class="container">
     <div class="row">&nbsp;</div>
     <div class="row">
         <div class="col-6">&nbsp;</div>
         <div class="col-6">
-            User..........<input type="text" id="userInput" />
-            <br />
-            Message...<input type="text" id="messageInput" />
-            <input type="button" id="sendButton" value="Send Message" />
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <hr />
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-6">&nbsp;</div>
-        <div class="col-6">
-            <ul id="messagesList"></ul>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <p id="userInput">@Model.UserName</p>
+                    <input type="text" id="messageInput" />
+                    <input type="button" id="sendButton" value="Send" class="btn btn-default" />
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-6">&nbsp;</div>
+                        <div class="col-6">
+                            <ul id="messagesList"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
 
-<script src="~/lib/signalr/signalr.js"></script>
-<script src="~/js/chat.js"></script>
-@*<script src="~/js/es5-chat.js"></script>*@
+
