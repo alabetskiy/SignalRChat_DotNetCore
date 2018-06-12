@@ -1,0 +1,23 @@
+{
+  "name": "ChatSignalR",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alabetskiy/SignalRChat_DotNetCore.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alabetskiy/SignalRChat_DotNetCore/issues"
+  },
+  "homepage": "https://github.com/alabetskiy/SignalRChat_DotNetCore#readme",
+  "dependencies": {
+    "@aspnet/signalr": "^1.0.0"
+  }
+}
