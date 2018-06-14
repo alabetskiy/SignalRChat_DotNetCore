@@ -11,9 +11,9 @@ const connection = new signalR.HubConnectionBuilder()
     .withUrl("/chatHub")
     .build();
 
-connection.on("ReceiveMessage", (user, message) => {
+    connection.on("ReceiveMessage", (user, message) => {
     const msg = message.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-    const encodedMsg = user + ": " + msg;
+    const encodedMsg = user + ": " + message;
     const li = document.createElement("li");
     li.textContent = encodedMsg;
     document.getElementById("messagesList").appendChild(li);
@@ -25,6 +25,7 @@ document.getElementById("sendButton").addEventListener("click", event => {
     const user = $('#userInput').text();
     const message = document.getElementById("messageInput").value;
     connection.invoke("SendMessage", user, message).catch(err => console.error(err.toString()));
+    connection.invoke("SendMessageMyself", user, message).catch(err => console.error(err.toString()));
     event.preventDefault();
 });
 });

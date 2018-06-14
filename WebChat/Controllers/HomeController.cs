@@ -24,7 +24,9 @@ namespace WebChat.Controllers
         {
             var user = _userManager.GetUserAsync(User).Result.Name;
 
-            var userDtob = new UserChatRoomViewModel() { UserName = user };
+            var usersList = _userManager.Users.ToList();
+
+            var userDtob = new UserChatRoomViewModel() { UserName = user, Users = usersList };
 
             return View(userDtob);
         }
