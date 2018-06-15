@@ -11,11 +11,17 @@ namespace WebChat
     {
         public async Task SendMessage(string user, string message)
         {
-            await Clients.User("e808636f-b97e-4cf5-b010-ac58c648e430").SendAsync("ReceiveMessage", user, message);
+            var userName = Context.User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Name).Value;
+            
+            // Add custom claims in order to retrive a UserName instead of Email address. 
+
+            await Clients.User(user).SendAsync("ReceiveMessage", userName, message);
         }
 
-        public async Task SendMessageMyself(string user, string message)
+        public async Task SendMessageMyself(string message)
         {
+            var user = Context.User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Name).Value;
+
             var userId = Context.User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier).Value;
 
             await Clients.User(userId).SendAsync("ReceiveMessage", user, message);

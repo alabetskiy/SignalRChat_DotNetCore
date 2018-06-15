@@ -7,16 +7,17 @@
             <br />
             @foreach (var item in Model.Users)
             {
-                <a href="#" class="btn btn-default btn-sm" active" role="button" aria-pressed="true">@item.Name</a>
+                <a class="btn btn-default btn-sm" active" role="button" id="@item.Id" aria-pressed="true">@item.Name</a>
                 <br />
             }
         </div>
         <div class="col-md-5">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <p id="userInput">@Model.UserName</p>
+                    <p id="userInput">Hello, @Model.UserName</p>
                     <div class="form-group">
-                        <label for="inputAddress">Message</label>
+                        <p id="recipient">Please select a recipient on the left</p>
+                        <label for="inputAddress" id="forUser">Send message:</label>
                         <input type="text" class="form-control" id="messageInput" placeholder="Please type your message">
                         <input type="button" id="sendButton" value="Send" class="btn btn-primary" />
                     </div>
